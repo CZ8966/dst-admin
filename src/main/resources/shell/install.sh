@@ -6,6 +6,12 @@ sudo apt-get install -y lib32gcc1
 sudo apt-get install -y libcurl4-gnutls-dev:i386
 sudo apt-get install -y screen
 
+#CentoOS7
+#sudo yum install update
+#sudo yum install -y xulrunner.i686
+#sudo yum install -y libcurl-devel.i686
+#sudo yum install -y screen
+
 mkdir ~/steamcmd
 cd ~/steamcmd
 
@@ -13,7 +19,10 @@ wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
 tar -xvzf steamcmd_linux.tar.gz
 ./steamcmd.sh +login anonymous +force_install_dir ~/dst +app_update 343050 validate +quit
 
-cp ~/steamcmd/linux32/libstdc++.so.6 ~/dst/bin/lib32/
+#CentoOS7
+#cp ~/steamcmd/linux32/libstdc++.so.6 ~/dst/bin/lib32/
+
+ln -s libcurl.so.4 /root/dst/bin/libcurl-gnutls.so.4
 
 #Abandon the use of script execution, and change to execute directly through java code
 #cd ~/dst/bin
